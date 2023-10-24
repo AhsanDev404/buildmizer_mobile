@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text } from "react-native";
 import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navigation';
 import HomeStack from "./HomeStack";
 import ProjectStack from "./ProjectStack";
 import CalculatorStack from "./CalculatorStack";
 import ProfileStack from "./ProfileStack";
+import AuthStack from "./AuthStack";
 
 const Tab = createMaterialBottomTabNavigator();
 
 const TabNavigation = () => {
+  const [isAuthenticate , setIsAuthenticate] = useState(false)
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -27,7 +29,7 @@ const TabNavigation = () => {
       />
       <Tab.Screen
         name="Project"
-        component={ProjectStack}
+        component={isAuthenticate ? ProjectStack: AuthStack}
         options={{
           tabBarLabel: "Project",
           tabBarIcon: "briefcase",
