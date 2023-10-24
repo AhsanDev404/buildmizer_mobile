@@ -13,9 +13,9 @@ const TabNavigation = () => {
     <Tab.Navigator
       initialRouteName="Home"
       shifting={true}
-      activeColor="#6200ee"
-      inactiveColor="#828282"
-      barStyle={{ backgroundColor: "#ffffff" }}
+      activeColor="#E8AA33"
+      inactiveColor="#fff"
+      barStyle={{ backgroundColor: "#000" }}
     >
       <Tab.Screen
         name="Home"
