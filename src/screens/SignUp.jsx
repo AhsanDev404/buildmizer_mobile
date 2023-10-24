@@ -1,32 +1,32 @@
-import { Link } from '@react-navigation/native';
-import React, { useState } from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { TextInput, Button, Title } from 'react-native-paper';
+import { Link } from "@react-navigation/native";
+import React, { useState } from "react";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { TextInput, Button, Title } from "react-native-paper";
 
 export default function SignUp({ navigation }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSignUp = () => {
     // Handle signup logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Confirm Password:', confirmPassword);
+    console.log("Email:", email);
+    console.log("Password:", password);
+    console.log("Confirm Password:", confirmPassword);
   };
-
-  
 
   return (
     <View style={styles.container}>
       <Title style={styles.title}>Sign Up</Title>
       <TextInput
+        mode="outlined"
         label="Email"
         value={email}
         onChangeText={(text) => setEmail(text)}
         style={styles.input}
       />
       <TextInput
+        mode="outlined"
         label="Password"
         value={password}
         onChangeText={(text) => setPassword(text)}
@@ -34,6 +34,7 @@ export default function SignUp({ navigation }) {
         style={styles.input}
       />
       <TextInput
+        mode="outlined"
         label="Confirm Password"
         value={confirmPassword}
         onChangeText={(text) => setConfirmPassword(text)}
@@ -43,11 +44,10 @@ export default function SignUp({ navigation }) {
       <Button mode="contained" onPress={handleSignUp} style={styles.button}>
         Sign Up
       </Button>
-      
-      <Link to={{screen:'loginMain'}}>
+
+      <Link to={{ screen: "login" }}>
         <Button>Already have an account? Sign In</Button>
       </Link>
-     
     </View>
   );
 }
@@ -55,8 +55,8 @@ export default function SignUp({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     padding: 16,
   },
   title: {
@@ -64,11 +64,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    width: '100%',
+    width: "100%",
     marginBottom: 16,
   },
   button: {
-    width: '100%',
+    width: "100%",
     marginTop: 16,
   },
   link: {

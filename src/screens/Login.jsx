@@ -13,9 +13,6 @@ export default function Login({ navigation }) {
     console.log('Email:', email);
     console.log('Password:', password);
   };
-
-  
-
   return (
     <View style={styles.container}>
       <Title style={styles.title}>Login</Title>
